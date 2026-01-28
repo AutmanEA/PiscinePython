@@ -8,9 +8,7 @@ def isStringValid(string: str) -> bool:
     alphanumeric or space characters
     """
     for char in string:
-        if char.isalnum() or char.isspace():
-            pass
-        else:
+        if not (char.isalnum() or (char == " ")):
             return False
     return True
 
