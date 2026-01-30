@@ -8,5 +8,6 @@ fmt_date = f"{d}"
 fmt_sec = f"{t:,.4f}"
 sci_sec = f"{t:.2e}"
 
-print(f"""Seconds since January 1, 1970: {fmt_sec} or {sci_sec} in scientific notation
-{fmt_date}""")
+print("Seconds since January 1, 1970:", end=' ')
+print(f"{fmt_sec} or {sci_sec} in scientific notation")
+print(f"{fmt_date}")
