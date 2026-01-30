@@ -1,29 +1,34 @@
 import os
 
 
-def updateProgressBar(lst, progress):
+def updateProgressBar(lst, idx):
     """
+    creates a progress bar based on terminal column size
+    and progession in lst range (his index named idx)
     """
     infoSize = 40
-    rangeSize = len(str(len(lst)))
-    minSize = (rangeSize * 2) + infoSize + 1
+    lstLen = str(len(lst))
+    lstNbSize = len(lstLen)
+    minSize = (lstNbSize * 2) + 1 + infoSize
     termSize = os.get_terminal_size().columns
     if (minSize > termSize):
         pBarTotalSize = 1
     else:
         pBarTotalSize = termSize - infoSize
-    percent = ((progress * 100) / len(lst)) / 100
-    pBarActualSize = (percent * pBarTotalSize)
-    bar = ''
+    pct = ((idx * 100) / len(lst)) / 100
+    pBarActualSize = (pct * pBarTotalSize)
+    pBar = '|'
     i = 0
     while i < int(pBarTotalSize):
         if (i <= int(pBarActualSize)):
-            bar += '█'
+            pBar += '█'
         else:
-            bar += ' '
+            pBar += ' '
         i += 1
-    progressBar = str(f"{percent:.0%}").rjust(4) + '|' + bar + '| ' + str(progress + 1) + '/' + str(len(lst))
-    print(progressBar, end='\r', flush=True)
+    pBar += '|'
+    lstRatio = str(idx + 1) + '/' + lstLen
+    output = str(f"{pct:.0%}").rjust(4) + pBar + ' ' + lstRatio
+    print(output, end='\r', flush=True)
 
 
 def ft_tqdm(lst: range):
