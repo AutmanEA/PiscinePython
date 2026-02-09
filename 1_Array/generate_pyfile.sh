@@ -1,12 +1,21 @@
 #!/bin/bash
 
 echo "[ -- GENERATEUR DE FICHIER PYTHON POUR LA PISCINE -- ]"
-echo "Entrer le nom du dossier :"
-read dossier
+
+while [ -z $dossier ]
+	echo "Entrer le nom du dossier :"
+	read dossier
+do
+
 mkdir -p $dossier
-echo "Entrer le nom du fichier :"
-read fichier
+
+while [ -z $fichier ]
+	echo "Entrer le nom du fichier :"
+	read fichier
+do
+
 touch $dossier/$fichier
+
 cat << EOF > $dossier/$fichier
 def main():
     """
