@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def main():
     """
-    Docstring for main
+    zooms on a pretty animal and shows it in grey scales
     """
     try:
         img = ft_load("/home/ael-atmi/Cursus/PicPython/1_Array/res/animal.jpeg")
