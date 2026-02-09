@@ -1,7 +1,8 @@
 def check_bmi_lists(lst: list):
     """
-    check_bmi_list checks if height or weight list merged in
+    - check_bmi_list checks if height or weight list merged in
     'lst' param are only composed by integers or floats
+    - raises exception on error
     """
     err_list = [elem for elem in lst if not isinstance(elem, (int, float))]
     if err_list != []:
