@@ -6,8 +6,9 @@ def main():
     """
     zooms on a pretty animal and shows it in grey scales
     """
+    path = "/home/ael-atmi/Cursus/PicPython/1_Array/res/animal.jpeg"
     try:
-        img = ft_load("/home/ael-atmi/Cursus/PicPython/1_Array/res/animal.jpeg")
+        img = ft_load(path)
         print(img)
         zoom = img[100:500, 450:850, :1]
         print('New shape after slicing :', zoom.shape)
