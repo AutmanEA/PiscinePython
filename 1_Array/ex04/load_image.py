@@ -14,5 +14,6 @@ def ft_load(path: str) -> np.array:
         img = mpimg.imread(path)
     except Exception:
         raise Exception("No file to read or not an image")
-    print('The shape of image is :', img.shape)
-    return img
+    zoom = img[100:500, 450:850, :1]
+    print('The shape of image is :', zoom.shape)
+    return zoom
