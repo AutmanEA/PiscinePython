@@ -3,16 +3,18 @@
 echo "[ -- GENERATEUR DE FICHIER PYTHON POUR LA PISCINE -- ]"
 
 while [ -z $dossier ]
+do
 	echo "Entrer le nom du dossier :"
 	read dossier
-do
+done
 
 mkdir -p $dossier
 
 while [ -z $fichier ]
+do
 	echo "Entrer le nom du fichier :"
 	read fichier
-do
+done
 
 touch $dossier/$fichier
 
