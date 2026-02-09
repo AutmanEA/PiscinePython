@@ -4,7 +4,8 @@ import matplotlib.image as mpimg
 
 def ft_load(path: str) -> np.array:
     """
-    ft_load loads an image and displays all pixels RGB values
+    ft_load loads an image and returns all pixels in RGB array
+    and prints his format
     - raises Exception on bad image
     """
     if (not isinstance(path, str)):
