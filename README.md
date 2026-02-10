@@ -70,3 +70,27 @@ pip freeze > requirement.txt
 ```sh
 python mon_programme.py
 ```
+#### Structure d'un programme python
+
+##### le main
+
+```python
+def main():
+    """
+    Docstring for main
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()
+```
+
+##### file generator
+
+to generate python files :
+```bash
+chmod +x generate_pyfile.sh
+./generate_pyfile.sh
+```
+and then follow instructions (french only), first enter folder name, second enter file name.
