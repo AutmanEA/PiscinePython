@@ -6,10 +6,16 @@ from load_csv import load_csv
 def main():
     """
     """
-    dataset = pd.DataFrame(load_csv("res/life_expectancy_years.csv"))
-    dataset.plot()
+    filename = "life_expectancy_years.csv"
+    path = f"/home/ael-atmi/Cursus/PicPython/2_DataTable/res/{filename}"
+    df = pd.DataFrame(load_csv(path))
+    df_france = df[df['country']=='France'].T[1:]
+    df_france.plot(kind='line',
+                   title='France life expectancy projection',
+                   xlabel='Year',
+                   ylabel='Life Expectancy',
+                   legend=None)
     plt.show()
-    pass
 
 
 if __name__ == "__main__":
