@@ -8,7 +8,7 @@ do
 	read dossier
 done
 
-mkdir -p $dossier
+mkdir -p ./$dossier
 
 while [ -z $fichier ]
 do
@@ -16,7 +16,7 @@ do
 	read fichier
 done
 
-touch $dossier/$fichier
+touch ./$dossier/$fichier
 
 cat << EOF > $dossier/$fichier
 def main():
