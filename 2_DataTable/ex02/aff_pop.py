@@ -5,6 +5,7 @@ from load_csv import load_csv
 
 def convert_data_numbers(nbr):
     """
+    Format number from str to float
     """
     try:
         if nbr.endswith('M'):
@@ -19,6 +20,8 @@ def convert_data_numbers(nbr):
 
 def main():
     """
+    Displays a plot of population total over time
+    comparing 2 countries
     """
     filename = "population_total.csv"
     path = f"/home/ael-atmi/Cursus/PicPython/2_DataTable/res/{filename}"
@@ -27,14 +30,14 @@ def main():
         print("Error: path not valid.")
     try:
         df_pop = pd.DataFrame(data.set_index('country'), dtype='str')
-        df_pop = df_pop.loc[['France', 'Japan'], '1800':'2050'].map(convert_data_numbers)
+        df_pop = df_pop.loc[['France', 'Spain'], '1800':'2050'].map(convert_data_numbers)
         maxpop = int(df_pop.max().max())
         minpop = int(df_pop.min().min())
         df_pop.T.plot(title='Population projections',
                     xlabel='Year',
                     ylabel='Population',
                     )
-        yticks = range(minpop - 10000000, maxpop + 10000000, 20000000)
+        yticks = range(max(minpop - 10000000, 0), maxpop + 10000000, 20000000)
         ylabels = [f'{x // 1000000}M' for x in yticks]
         plt.yticks(yticks, ylabels)
         xticks = range(0,2050 - 1800,40)
