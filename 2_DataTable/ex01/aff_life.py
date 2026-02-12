@@ -16,12 +16,12 @@ def main():
         print("Error: path not valid.")
     try:
         df = pd.DataFrame(data)
-        df_france = df[df['country']=='France'].T[1:]
+        df_france = df[df['country'] == 'France'].T[1:]
         df_france.plot(kind='line',
-                    title='France life expectancy projection',
-                    xlabel='Year',
-                    ylabel='Life Expectancy',
-                    legend=None)
+                       title='France life expectancy projection',
+                       xlabel='Year',
+                       ylabel='Life Expectancy',
+                       legend=None)
         plt.show()
     except Exception as e:
         print(e)

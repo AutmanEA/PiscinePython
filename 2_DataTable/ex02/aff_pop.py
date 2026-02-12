@@ -14,7 +14,7 @@ def convert(nbr):
             return float(nbr[:-1]) * 1000
         else:
             return float(nbr)
-    except:
+    except Exception:
         return None
 
 
@@ -34,13 +34,13 @@ def main():
         maxpop = int(df_pop.max().max())
         minpop = int(df_pop.min().min())
         df_pop.T.plot(title='Population projections',
-                    xlabel='Year',
-                    ylabel='Population',
-                    )
+                      xlabel='Year',
+                      ylabel='Population',
+                      )
         yticks = range(max(minpop - 10000000, 0), maxpop + 10000000, 20000000)
         ylabels = [f'{x // 1000000}M' for x in yticks]
         plt.yticks(yticks, ylabels)
-        xticks = range(0,2050 - 1800,40)
+        xticks = range(0, 2050 - 1800, 40)
         xlabels = [f'{x + 1800}' for x in xticks]
         plt.xticks(xticks, xlabels)
         plt.legend(loc='upper left')
