@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from load_csv import load_csv
 
 
-def convert_data_numbers(nbr):
+def convert(nbr):
     """
     Format number from str to float
     """
@@ -30,7 +30,7 @@ def main():
         print("Error: path not valid.")
     try:
         df_pop = pd.DataFrame(data.set_index('country'), dtype='str')
-        df_pop = df_pop.loc[['France', 'Spain'], '1800':'2050'].map(convert_data_numbers)
+        df_pop = df_pop.loc[['France', 'Spain'], '1800':'2050'].map(convert)
         maxpop = int(df_pop.max().max())
         minpop = int(df_pop.min().min())
         df_pop.T.plot(title='Population projections',
